@@ -119,6 +119,8 @@ class _AccountWidgetState extends ConsumerState<AccountWidget> {
   Widget _buildEmail() {
     return TextFormField(
       controller: _ctrlEmail,
+      keyboardType: TextInputType.emailAddress,
+      autocorrect: false,
       decoration: InputDecoration(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
         prefixIcon: const Icon(Icons.alternate_email),

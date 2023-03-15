@@ -156,7 +156,9 @@ class CartUseCase {
      * agrupo solo la posición en la lista que se guarda localmente.
      */
     productsList.asMap().forEach((int index, ProductModel product) {
-      (group[product.id!] ??= <int>[]).add(index);
+      if (product.id != null) {
+        (group[product.id!] ??= <int>[]).add(index);
+      }
     });
 
     return group;
